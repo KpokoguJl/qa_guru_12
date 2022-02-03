@@ -18,12 +18,13 @@ public class ListenerIssuesTest {
 
     @BeforeAll
     static void beforeAll(){
+
         Configuration.browserSize="1920x1080";
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @Test
     void selenideListenerTest(){
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
 
